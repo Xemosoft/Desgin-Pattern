@@ -1,4 +1,4 @@
-package com.prototype;
+package com.prototype.example1;
 
 public class Main {
 

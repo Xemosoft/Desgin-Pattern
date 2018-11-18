@@ -1,37 +1,41 @@
-package com.builder;
+package com.builder.example2;
 
-public class Robot {
+public class User {
 
-    private Integer id;
+    private Long id;
     private String name;
     private String email;
     private String password;
+    private String phone;
 
-    public Robot(Builder builder) {
+    public User(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.email = builder.email;
         this.password = builder.password;
+        this.phone = builder.phone;
     }
+
 
     public static class Builder{
 
-        private Integer id;
+        private Long id;
         private String name;
         private String email;
         private String password;
+        private String phone;
 
-        public Robot build(){
-            return new Robot(this);
+        public User build(){
+            return new User(this);
         }
 
-        public Builder withId(Integer id){
+        public Builder withId(Long id){
             this.id = id;
             return this;
         }
 
         public Builder withName(String name){
-            this.name= name;
+            this.name = name;
             return this;
         }
 
@@ -39,19 +43,25 @@ public class Robot {
             this.email = email;
             return this;
         }
+
         public Builder withPassword(String password){
             this.password = password;
             return this;
         }
 
+        public Builder withPhone(String phone){
+            this.phone = phone;
+            return this;
+        }
 
     }
 
-    public Integer getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -79,13 +89,22 @@ public class Robot {
         this.password = password;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
-        return "Robot{" +
-                "withId=" + id +
-                ", withName='" + name + '\'' +
-                ", withEmail='" + email + '\'' +
-                ", withPassword='" + password + '\'' +
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

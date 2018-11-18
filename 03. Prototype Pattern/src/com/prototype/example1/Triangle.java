@@ -1,4 +1,4 @@
-package com.prototype;
+package com.prototype.example1;
 
 public class Triangle extends Shape {
     
@@ -6,4 +6,5 @@ public class Triangle extends Shape {
     void draw() {
         System.out.println("inside triangle::draw method");
     }
+
 }
